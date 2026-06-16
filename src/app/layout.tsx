@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-// Self-hosted fonts (bundled from npm — no build-time fetch to Google Fonts)
-import "@fontsource-variable/inter";
-import "@fontsource-variable/jetbrains-mono";
+// Fonts are self-hosted via @font-face in globals.css (files in /public/fonts).
+// No build-time fetch to Google Fonts — builds reliably offline.
 import "./globals.css";
 import { profile } from "@/data/portfolio";
 

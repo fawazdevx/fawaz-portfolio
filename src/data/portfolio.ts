@@ -79,6 +79,7 @@ export const projects: Project[] = [
     impact: "On-chain payment & settlement flows behind a wallet-connected dApp.",
     stack: ["React", "TypeScript", "Solidity", "USDC", "Arc"],
     tags: ["Web3", "AI"],
+    github: "https://github.com/fawazdevx/Nexora",
     live: "https://nexorafi.vercel.app",
     featured: true,
   },
@@ -89,7 +90,7 @@ export const projects: Project[] = [
     impact: "~300 campaigns to date on Arc testnet. Voting, refunds, transparency dashboards.",
     stack: ["Solidity", "React", "USDC", "Arc"],
     tags: ["Web3"],
-    github: "https://github.com/fawazdevx",
+    github: "https://github.com/fawazdevx/Fundarc",
     live: "https://fundarc.netlify.app",
     featured: true,
   },
@@ -138,6 +139,7 @@ export const projects: Project[] = [
     impact: "Modular architecture and PyQt5 UI built for extensibility.",
     stack: ["Python", "PyQt5"],
     tags: ["Backend"],
+    github: "https://github.com/fawazdevx/VHTST",
   },
 ];
 
@@ -213,36 +215,36 @@ export type LogEntry = {
 export const buildLog: LogEntry[] = [
   {
     date: "2026 Q2",
-    title: "Building ChainLearn MVP",
-    detail: "Decentralized LMS with wallet auth and NFT certifications.",
-    tag: "Web3 / EdTech",
-  },
-  {
-    date: "2026 Q1",
     title: "Shipped Nexora finance layer",
     detail: "Agent wallets + USDC settlement (x402) on Arc.",
     tag: "Web3 / AI",
   },
   {
-    date: "2025 Q4",
+    date: "2026 Q2",
     title: "Built Agora Agent Market",
     detail: "Upgradeable Solidity contracts + staked signal marketplace.",
     tag: "Web3 / AI",
   },
   {
-    date: "2025 Q3",
+    date: "2026 Q1",
     title: "Released Arc Unreal Engine plugin",
     detail: "Blueprint-callable onchain USDC & NFT nodes for game devs.",
     tag: "Game Dev",
   },
   {
-    date: "2025 Q2",
+    date: "2026 Q2",
     title: "Launched Fundarc",
     detail: "Milestone escrow crowdfunding — ~300 campaigns on testnet.",
     tag: "Web3",
   },
   {
-    date: "2023 – 2024",
+    date: "2024 Q3",
+    title: "Building ChainLearn MVP",
+    detail: "Decentralized LMS with wallet auth and NFT certifications.",
+    tag: "Web3 / EdTech",
+  },
+  {
+    date: "2023 – 2026",
     title: "TelescriptGenius in production",
     detail: "200+ telecom config scripts generated; secure auth + validation engine.",
     tag: "Backend / Automation",
