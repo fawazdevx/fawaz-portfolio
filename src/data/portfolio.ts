@@ -258,6 +258,12 @@ export const buildLog: LogEntry[] = [
     detail: "200+ telecom config scripts generated; secure auth + validation engine.",
     tag: "Backend / Automation",
   },
+  {
+    date: "2023",
+    title: "Contributed backend to Lifeline",
+    detail: "Django/Python API for a healthcare & emergency-response app — GDSC Solution Challenge (team).",
+    tag: "Backend / Mobile",
+  },
 ];
 
 export const certifications = [
