@@ -56,7 +56,7 @@ export type Project = {
   blurb: string;
   impact: string;
   stack: string[];
-  tags: ("Web3" | "AI" | "Security" | "Game Dev" | "Backend")[];
+  tags: ("Web3" | "AI" | "Security" | "Game Dev" | "Backend" | "Mobile")[];
   github?: string;
   live?: string;
   featured?: boolean;
@@ -140,6 +140,15 @@ export const projects: Project[] = [
     stack: ["Python", "PyQt5"],
     tags: ["Backend"],
     github: "https://github.com/fawazdevx/VHTST",
+  },
+  {
+    name: "Lifeline",
+    blurb:
+      "Cross-platform emergency-response & healthcare app — handle emergencies, connect with healthcare professionals, and manage medical profiles. Built with a team for the GDSC Solution Challenge.",
+    impact: "Backend developer on the Django/Python API; collaborated on the Flutter app.",
+    stack: ["Flutter", "Dart", "Python", "Django"],
+    tags: ["Mobile", "Backend"],
+    github: "https://github.com/fawazdevx/lifeline",
   },
 ];
 

@@ -6,12 +6,13 @@ import Section from "./Section";
 import { projects, type Project } from "@/data/portfolio";
 
 const ALL = "all";
-const tags = [ALL, "Web3", "AI", "Backend", "Security", "Game Dev"] as const;
+const tags = [ALL, "Web3", "AI", "Backend", "Mobile", "Security", "Game Dev"] as const;
 
 const tagColor: Record<string, string> = {
   Web3: "text-purple-bright border-purple/40 bg-purple/10",
   AI: "text-cyan border-cyan/40 bg-cyan/10",
   Backend: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10",
+  Mobile: "text-sky-300 border-sky-400/30 bg-sky-400/10",
   Security: "text-rose-300 border-rose-400/30 bg-rose-400/10",
   "Game Dev": "text-amber-300 border-amber-400/30 bg-amber-400/10",
 };
