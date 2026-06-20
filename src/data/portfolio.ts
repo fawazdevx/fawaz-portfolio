@@ -84,6 +84,18 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    name: "RecallForge",
+    blurb:
+      "AI cybersecurity tutor with persistent, user-owned memory. Three Claude agents (mentor, challenge, evaluator) generate adaptive Linux privilege-escalation labs; progress is anchored on-chain so the AI never forgets your weak areas.",
+    impact:
+      "Memory stored on Walrus as verifiable blobs, checkpoints on Sui testnet; non-custodial (users sign their own txs). Built for Sui Overflow · Walrus track.",
+    stack: ["React", "TypeScript", "Sui Move", "Anthropic Claude", "Walrus", "Express"],
+    tags: ["AI", "Web3", "Security"],
+    github: "https://github.com/fawazdevx/RecallForge",
+    live: "https://recallforgeai.vercel.app",
+    featured: true,
+  },
+  {
     name: "Fundarc",
     blurb:
       "Milestone-based crowdfunding dApp. Contributions held in smart-contract escrow and released only after contributor voting approves each milestone.",
@@ -222,6 +234,13 @@ export type LogEntry = {
 };
 
 export const buildLog: LogEntry[] = [
+  {
+    date: "2026 Q2",
+    title: "Built RecallForge",
+    detail:
+      "AI cybersecurity tutor with on-chain memory (Sui + Walrus). Built for Sui Overflow.",
+    tag: "AI / Web3 / Security",
+  },
   {
     date: "2026 Q2",
     title: "Shipped Nexora finance layer",
