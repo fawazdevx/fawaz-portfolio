@@ -17,8 +17,8 @@ export const profile = {
   socials: {
     github: "https://github.com/fawazdevx",
     linkedin: "https://linkedin.com/in/fawazoyebode",
-    twitter: "https://x.com/0xFawazdev",
-    website: "https://fawazoyebode.vercel.app",
+    twitter: "https://x.com/fawazdevx",
+    website: "https://fawazoyebode.tech",
   },
 };
 
