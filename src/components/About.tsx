@@ -16,15 +16,6 @@ export default function About() {
           className="lg:col-span-2"
         >
           <p className="text-lg leading-relaxed text-gray-300">{about.summary}</p>
-
-          <div className="glass mt-8 p-5">
-            <div className="mb-2 font-mono text-xs uppercase tracking-widest text-cyan">
-              ● currently building
-            </div>
-            <p className="text-sm leading-relaxed text-gray-300">
-              {about.currentlyBuilding}
-            </p>
-          </div>
         </motion.div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:col-span-3">

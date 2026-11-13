@@ -4,7 +4,7 @@
 
 A cyberpunk "developer command center" - built to *show* the work, not just list it.
 
-**[→ Live site: fawazoyebode.vercel.app](https://fawazoyebode.vercel.app)**
+**[→ Live site: fawazoyebode.vercel.app](https://fawazoyebode.tech)**
 
 `Next.js` · `TypeScript` · `Tailwind CSS v4` · `Framer Motion`
 
@@ -37,6 +37,8 @@ and Motoko.
 | Project | What it is |
 | --- | --- |
 | **Nexora** | Financial control layer for AI agents - USDC settlement on Arc |
+| **Nexora x402 SDK** | TypeScript middleware for paid SaaS, games, APIs, and USDC apps |
+| **MatchPulse Arena** | World Cup second-screen fan game with live match data, Solana sign-in, and creator watch rooms |
 | **Fundarc** | Milestone-escrow crowdfunding dApp (~300 campaigns on testnet) |
 | **ChainLearn** | Decentralized LMS with on-chain certs & NFT learning incentives |
 | **TelescriptGenius** | Telecom automation tool - generated 200+ config scripts |
@@ -63,7 +65,7 @@ All content (projects, skills, timeline, links) lives in one place:
 
 ## Contact
 
-- **Live** - [fawazoyebode.vercel.app](https://fawazoyebode.vercel.app)
+- **Live** - [fawazoyebode.vercel.app](https://fawazoyebode.tech)
 - **GitHub** - [@fawazdevx](https://github.com/fawazdevx)
 - **LinkedIn** - [in/fawazoyebode](https://linkedin.com/in/fawazoyebode)
 - **Email** - oyebodefawaz2020@gmail.com

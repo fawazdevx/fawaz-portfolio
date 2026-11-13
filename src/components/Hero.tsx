@@ -61,7 +61,7 @@ export default function Hero() {
         className="pill mb-6 px-4 py-1.5 font-mono text-xs text-cyan"
       >
         <span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-cyan align-middle" />
-        available for internships & collaborations
+        available for paid projects & collaborations
       </motion.div>
 
       <motion.h1

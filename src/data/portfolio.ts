@@ -17,19 +17,19 @@ export const profile = {
   socials: {
     github: "https://github.com/fawazdevx",
     linkedin: "https://linkedin.com/in/fawazoyebode",
-    twitter: "https://x.com/fawazdevx",
+    twitter: "https://x.com/fawazdevs",
     website: "https://fawazoyebode.tech",
   },
 };
 
 export const about = {
   summary:
-    "Backend-focused software developer with hands-on experience shipping automation tools and full-stack Web3 applications. I design modular, secure backends — REST APIs, auth, validation — and smart-contract-backed dApps across the stack, from PyQt5 desktop tooling to React frontends and Solidity / Motoko contracts.",
+    "Backend-focused software developer with hands-on experience shipping automation tools and full-stack Web3 applications. I design modular, secure backends, REST APIs, auth, validation, and smart-contract-backed dApps across the stack, from PyQt5 desktop tooling to React frontends and Solidity / Motoko contracts.",
   focus: [
     {
       title: "Web3",
       detail: "Solidity, Motoko (ICP), USDC settlement, upgradeable contracts",
-      proof: "Nexora · Fundarc · Agora",
+      proof: "Nexora · Fundarc",
     },
     {
       title: "Backend & Automation",
@@ -47,8 +47,6 @@ export const about = {
       proof: "Arc UE Plugin",
     },
   ],
-  currentlyBuilding:
-    "ChainLearn — a decentralized LMS helping Web2 developers transition into Web3 with on-chain certifications and NFT-powered learning incentives.",
 };
 
 export type Project = {
@@ -80,7 +78,19 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "Solidity", "USDC", "Arc"],
     tags: ["Web3", "AI"],
     github: "https://github.com/fawazdevx/Nexora",
-    live: "https://nexorafi.vercel.app",
+    live: "https://nexorafi.app",
+    featured: true,
+  },
+  {
+    name: "Nexora x402 SDK",
+    blurb:
+      "TypeScript SDK for turning SaaS endpoints, games, and USDC apps into paid experiences with x402 payment requirements, verification, settlement, and receipts.",
+    impact:
+      "Supports paid APIs, subscriptions, game purchases, creator tools, and agent commerce across Arc, Base, and Arbitrum, with policy-guarded BOT Chain settlement.",
+    stack: ["TypeScript", "x402", "USDC", "Express", "Next.js"],
+    tags: ["Web3", "Backend", "AI"],
+    github: "https://github.com/fawazdevx/Nexora/tree/master/sdk/x402",
+    live: "https://www.npmjs.com/package/@nexorafi/x402",
     featured: true,
   },
   {
@@ -93,6 +103,18 @@ export const projects: Project[] = [
     tags: ["AI", "Web3", "Security"],
     github: "https://github.com/fawazdevx/RecallForge",
     live: "https://recallforgeai.vercel.app",
+    featured: true,
+  },
+  {
+    name: "MatchPulse Arena",
+    blurb:
+      "World Cup second-screen fan game with live match data, market sentiment, no-money predictions, streaks, badges, and creator watch rooms.",
+    impact:
+      "Server-side TxLINE data proxy with SSE live updates, Solana wallet sign-in, persistent leaderboards, and embeddable Creator Cup widgets.",
+    stack: ["Next.js", "TypeScript", "Solana", "TxLINE", "Prisma", "PostgreSQL"],
+    tags: ["Web3", "Backend", "Mobile"],
+    github: "https://github.com/fawazdevx/MatchPulse-Arena",
+    live: "https://matchpulsearena.vercel.app",
     featured: true,
   },
   {
@@ -115,15 +137,6 @@ export const projects: Project[] = [
     tags: ["Backend", "Security"],
     github: "https://github.com/fawazdevx/TelescriptGenius",
     featured: true,
-  },
-  {
-    name: "Agora Agent Market",
-    blurb:
-      "Onchain marketplace where AI agents publish staked, USDC-backed market signals judged on real outcomes — not claims.",
-    impact: "Upgradeable Solidity (UUPS), agent leaderboards, stake-weighted sentiment.",
-    stack: ["Vite", "React", "Solidity", "Foundry", "USDC"],
-    tags: ["Web3", "AI"],
-    github: "https://github.com/fawazdevx/Agora-agent-market",
   },
   {
     name: "Arc UE Plugin",
@@ -245,12 +258,6 @@ export const buildLog: LogEntry[] = [
     date: "2026 Q2",
     title: "Shipped Nexora finance layer",
     detail: "Agent wallets + USDC settlement (x402) on Arc.",
-    tag: "Web3 / AI",
-  },
-  {
-    date: "2026 Q2",
-    title: "Built Agora Agent Market",
-    detail: "Upgradeable Solidity contracts + staked signal marketplace.",
     tag: "Web3 / AI",
   },
   {
