@@ -6,7 +6,7 @@ import { buildLog } from "@/data/portfolio";
 
 export default function BuildLog({ children }: { children?: React.ReactNode }) {
   return (
-    <Section id="log" index="04" title="build_log">
+    <Section id="log" index="06" title="build_log">
       <div className="grid gap-10 lg:grid-cols-5">
         <div className="lg:col-span-3">
           <ol className="relative border-l border-purple/25 pl-6">

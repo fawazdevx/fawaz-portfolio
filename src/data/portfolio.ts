@@ -86,7 +86,7 @@ export const projects: Project[] = [
     blurb:
       "TypeScript SDK for turning SaaS endpoints, games, and USDC apps into paid experiences with x402 payment requirements, verification, settlement, and receipts.",
     impact:
-      "Supports paid APIs, subscriptions, game purchases, creator tools, and agent commerce across Arc, Base, and Arbitrum, with policy-guarded BOT Chain settlement.",
+      "npm v0.4.0 · x402 v1/v2 · Express & Next.js middleware · Arc, Base, Arbitrum & BOT Chain · SaaS, subscriptions, game purchases and USDC apps.",
     stack: ["TypeScript", "x402", "USDC", "Express", "Next.js"],
     tags: ["Web3", "Backend", "AI"],
     github: "https://github.com/fawazdevx/Nexora/tree/master/sdk/x402",

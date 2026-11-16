@@ -37,7 +37,7 @@ and Motoko.
 | Project | What it is |
 | --- | --- |
 | **Nexora** | Financial control layer for AI agents - USDC settlement on Arc |
-| **Nexora x402 SDK** | TypeScript middleware for paid SaaS, games, APIs, and USDC apps |
+| **Nexora x402 SDK** | npm v0.4.0 TypeScript middleware for paid SaaS, games, APIs, and USDC apps across Arc, Base, Arbitrum, and BOT Chain |
 | **MatchPulse Arena** | World Cup second-screen fan game with live match data, Solana sign-in, and creator watch rooms |
 | **Fundarc** | Milestone-escrow crowdfunding dApp (~300 campaigns on testnet) |
 | **ChainLearn** | Decentralized LMS with on-chain certs & NFT learning incentives |

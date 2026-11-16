@@ -23,14 +23,14 @@ export default function Contact() {
         <div className="grid-bg pointer-events-none absolute inset-0 -z-0 opacity-50" />
         <div className="relative">
           <div className="flex items-center gap-4">
-            <span className="font-mono text-sm text-cyan">05</span>
+            <span className="font-mono text-sm text-cyan">07</span>
             <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
               let&apos;s build something
             </h2>
           </div>
 
           <p className="mt-4 max-w-xl text-muted">
-            Open to <span className="text-purple-bright">Software Development internships</span>,
+            Open to <span className="text-purple-bright">paid software projects</span>,
             Web3 collaborations, and freelance builds. The fastest way to reach me is email.
           </p>
 

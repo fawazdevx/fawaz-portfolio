@@ -6,7 +6,7 @@ import { skillCategories } from "@/data/portfolio";
 
 export default function Skills() {
   return (
-    <Section id="skills" index="03" title="skills_matrix">
+    <Section id="skills" index="05" title="skills_matrix">
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {skillCategories.map((cat, i) => {
           const accent = cat.accent === "cyan" ? "text-cyan" : "text-purple-bright";
