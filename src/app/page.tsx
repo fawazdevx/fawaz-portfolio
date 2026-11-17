@@ -11,7 +11,7 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main id="main" className="relative">
       <Chrome />
       <Hero />
       <About />

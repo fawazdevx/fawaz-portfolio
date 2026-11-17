@@ -46,13 +46,9 @@ export default function Services() {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        {services.map((service, i) => (
+        {services.map((service) => (
           <motion.article
             key={service.title}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.06 }}
             className="glass glass-hover p-6"
           >
             <h3 className={`font-mono text-lg font-semibold ${service.accent}`}>

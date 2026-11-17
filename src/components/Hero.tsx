@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { profile } from "@/data/portfolio";
 
@@ -44,7 +44,9 @@ const fade = {
 };
 
 export default function Hero() {
-  const role = useTypewriter(profile.roles);
+  const reduced = useReducedMotion();
+  const typed = useTypewriter(profile.roles);
+  const role = reduced ? profile.roles[0] : typed;
 
   return (
     <section
@@ -61,7 +63,7 @@ export default function Hero() {
         className="pill mb-6 px-4 py-1.5 font-mono text-xs text-cyan"
       >
         <span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-cyan align-middle" />
-        available for paid projects & collaborations
+        open to full-time backend & Web3 roles
       </motion.div>
 
       <motion.h1
@@ -75,16 +77,6 @@ export default function Hero() {
         <span className="gradient-text glow-purple">Oyebode</span>
       </motion.h1>
 
-      <motion.p
-        variants={fade}
-        initial="hidden"
-        animate="show"
-        custom={2}
-        className="mt-5 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-gray-200 sm:text-4xl"
-      >
-        Secure systems for ambitious products.
-      </motion.p>
-
       <motion.div
         variants={fade}
         initial="hidden"
@@ -94,7 +86,7 @@ export default function Hero() {
       >
         <span className="text-muted">&gt; </span>
         {role}
-        <span className="caret">█</span>
+        <span className="caret" aria-hidden="true">█</span>
       </motion.div>
 
       <motion.p

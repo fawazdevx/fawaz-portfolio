@@ -62,7 +62,6 @@ function run(input: string): { out: string[]; close?: boolean; clear?: boolean }
       return {
         out: [
           `  email    ${profile.email}`,
-          `  phone    ${profile.phone}`,
           `  github   ${profile.socials.github}`,
           `  linkedin ${profile.socials.linkedin}`,
         ],

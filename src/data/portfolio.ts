@@ -2,16 +2,15 @@ export const profile = {
   name: "Fawaz Oyebode",
   fullName: "Fawaz Oyebode Akanni",
   roles: [
-    "Backend & Web3 Developer",
-    "Smart Contract Engineer",
-    "Cybersecurity Practitioner",
-    "Game Dev Tooling Builder",
+    "Backend Developer",
+    "Web3 & Smart Contract Developer",
+    "Security-minded Engineer",
   ],
   tagline:
     "I build production-grade backends, smart-contract-backed dApps, and automation tools that replace messy manual workflows.",
   location: "Lagos / Ibadan, Nigeria",
   email: "oyebodefawaz2020@gmail.com",
-  phone: "+234 906 406 8250",
+  twitterHandle: "fawazdevs",
   githubUser: "fawazdevx",
   resumeUrl: "/Fawaz_Oyebode_Software_CV.pdf",
   socials: {
@@ -58,18 +57,11 @@ export type Project = {
   github?: string;
   live?: string;
   featured?: boolean;
+  /** Screenshot in /public/projects, e.g. "/projects/nexora.png" */
+  image?: string;
 };
 
 export const projects: Project[] = [
-  {
-    name: "ChainLearn",
-    blurb:
-      "Decentralized LMS helping Web2 developers transition into Web3 via interactive courses, on-chain certifications, and NFT learning incentives.",
-    impact: "Wallet-based auth, gamified learning, NFT certificates.",
-    stack: ["React", "Solidity", "Web3", "NFT"],
-    tags: ["Web3", "AI"],
-    featured: true,
-  },
   {
     name: "Nexora",
     blurb:
@@ -80,6 +72,14 @@ export const projects: Project[] = [
     github: "https://github.com/fawazdevx/Nexora",
     live: "https://nexorafi.app",
     featured: true,
+  },
+  {
+    name: "ChainLearn",
+    blurb:
+      "Decentralized LMS helping Web2 developers transition into Web3 via interactive courses, on-chain certifications, and NFT learning incentives.",
+    impact: "Wallet-based auth, gamified learning, NFT certificates.",
+    stack: ["React", "Solidity", "Web3", "NFT"],
+    tags: ["Web3", "AI"],
   },
   {
     name: "Nexora x402 SDK",
@@ -136,7 +136,6 @@ export const projects: Project[] = [
     stack: ["Python", "PyQt5", "PySide"],
     tags: ["Backend", "Security"],
     github: "https://github.com/fawazdevx/TelescriptGenius",
-    featured: true,
   },
   {
     name: "Arc UE Plugin",

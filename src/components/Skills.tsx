@@ -22,7 +22,7 @@ export default function Skills() {
             >
               <div className="mb-4 flex items-center gap-2">
                 <span className={`h-2 w-2 rounded-full ${dot}`} />
-                <h3 className={`font-mono text-sm font-semibold uppercase tracking-wider ${accent}`}>
+                <h3 className={`font-mono text-sm font-semibold ${accent}`}>
                   {cat.title}
                 </h3>
               </div>

@@ -41,7 +41,7 @@ export default function NexoraCaseStudy() {
   return (
     <Section id="nexora-case-study" index="03" title="nexora.system">
       <div className="mb-10 max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan">
+        <p className="font-mono text-xs text-cyan">
           Arc-first payment infrastructure
         </p>
         <h3 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
@@ -66,7 +66,7 @@ export default function NexoraCaseStudy() {
         className="glass overflow-hidden p-5 sm:p-7"
       >
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-          <span className="font-mono text-xs uppercase tracking-widest text-purple-bright">
+          <span className="font-mono text-xs text-purple-bright">
             payment lifecycle
           </span>
           <span className="font-mono text-xs text-muted">x402 v1/v2 · USDC · Arc-first</span>
@@ -91,7 +91,7 @@ export default function NexoraCaseStudy() {
 
       <div className="mt-5 glass p-5 sm:p-7">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-          <span className="font-mono text-xs uppercase tracking-widest text-purple-bright">
+          <span className="font-mono text-xs text-purple-bright">
             x402 request flow
           </span>
           <span className="font-mono text-xs text-muted">paid API · game · SaaS resource</span>
@@ -106,7 +106,7 @@ export default function NexoraCaseStudy() {
           ].map(([label, detail], i) => (
             <div key={label} className="relative">
               <div className="h-full rounded-lg border border-cyan/20 bg-cyan/[0.04] p-4">
-                <div className="font-mono text-xs uppercase tracking-wider text-cyan">
+                <div className="font-mono text-xs text-cyan">
                   {label}
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-gray-300">{detail}</p>

@@ -22,7 +22,7 @@ export default function BuildLog({ children }: { children?: React.ReactNode }) {
                 <span className="absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border-2 border-base bg-purple glow-border" />
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="font-mono text-xs text-cyan">{entry.date}</span>
-                  <span className="pill px-2 py-0.5 font-mono text-[10px] text-purple-bright">
+                  <span className="pill px-2 py-0.5 font-mono text-xs text-purple-bright">
                     {entry.tag}
                   </span>
                 </div>

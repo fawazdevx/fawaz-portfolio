@@ -16,6 +16,14 @@
   src: url("/fonts/jetbrains-mono-variable.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Bricolage Grotesque Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("/fonts/bricolage-grotesque-variable.woff2") format("woff2");
+}
+
 @theme {
   --color-base: #0a0a0f;
   --color-base-2: #0f0f17;
@@ -25,6 +33,7 @@
   --color-cyan: #22d3ee;
   --color-muted: #8b8ba7;
 
+  --font-display: "Bricolage Grotesque Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono",
@@ -95,14 +104,12 @@ body {
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .glass-hover:hover {
-  border-color: rgba(139, 92, 246, 0.55);
-  transform: translateY(-4px);
-  box-shadow: 0 0 28px -6px rgba(139, 92, 246, 0.45);
+  border-color: rgba(139, 92, 246, 0.6);
 }
 
 /* Glow text */
 .glow-purple {
-  text-shadow: 0 0 18px rgba(139, 92, 246, 0.55);
+  text-shadow: 0 0 14px rgba(139, 92, 246, 0.3);
 }
 .glow-cyan {
   text-shadow: 0 0 18px rgba(34, 211, 238, 0.5);
@@ -119,23 +126,6 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-/* Subtle scanline overlay */
-.scanlines::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 60;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.02) 0px,
-    rgba(255, 255, 255, 0.02) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  opacity: 0.25;
 }
 
 /* Pill / tag */
@@ -185,8 +175,9 @@ input:focus-visible {
   }
 }
 
-@media (max-width: 640px) {
-  .scanlines::before {
-    display: none;
+
+@layer base {
+  h1, h2 {
+    font-family: var(--font-display);
   }
 }

@@ -4,7 +4,7 @@
 
 A cyberpunk "developer command center" - built to *show* the work, not just list it.
 
-**[→ Live site: fawazoyebode.vercel.app](https://fawazoyebode.tech)**
+**[→ Live site: fawazoyebode.tech](https://fawazoyebode.tech)**
 
 `Next.js` · `TypeScript` · `Tailwind CSS v4` · `Framer Motion`
 
@@ -65,7 +65,7 @@ All content (projects, skills, timeline, links) lives in one place:
 
 ## Contact
 
-- **Live** - [fawazoyebode.vercel.app](https://fawazoyebode.tech)
+- **Live** - [fawazoyebode.tech](https://fawazoyebode.tech)
 - **GitHub** - [@fawazdevx](https://github.com/fawazdevx)
 - **LinkedIn** - [in/fawazoyebode](https://linkedin.com/in/fawazoyebode)
 - **Email** - oyebodefawaz2020@gmail.com

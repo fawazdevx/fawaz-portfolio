@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Section from "./Section";
 import { projects, type Project } from "@/data/portfolio";
 
@@ -27,16 +28,11 @@ function Card({ p }: { p: Project }) {
       transition={{ duration: 0.3 }}
       className="glass glass-hover group relative flex flex-col p-6"
     >
-      {p.featured && (
-        <span className="absolute right-4 top-4 font-mono text-[10px] uppercase tracking-widest text-cyan/70">
-          ★ featured
-        </span>
-      )}
       <div className="mb-1 flex flex-wrap gap-2">
         {p.tags.map((t) => (
           <span
             key={t}
-            className={`rounded-full border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider ${tagColor[t]}`}
+            className={`rounded-full border px-2 py-0.5 font-mono text-xs ${tagColor[t]}`}
           >
             {t}
           </span>
@@ -56,7 +52,7 @@ function Card({ p }: { p: Project }) {
         {p.stack.map((s) => (
           <span
             key={s}
-            className="rounded border border-white/10 bg-white/[0.03] px-2 py-0.5 font-mono text-[11px] text-gray-400"
+            className="rounded border border-white/10 bg-white/[0.03] px-2 py-0.5 font-mono text-xs text-gray-400"
           >
             {s}
           </span>
@@ -102,16 +98,18 @@ function FeaturedCard({ p, index }: { p: Project; index: number }) {
         index === 0 ? "md:col-span-2" : ""
       }`}
     >
-      <div className="project-signal absolute inset-0 -z-0" aria-hidden="true">
-        <span>{String(index + 1).padStart(2, "0")}</span>
-      </div>
+      {p.image ? (
+        <Image src={p.image} alt={`${p.name} screenshot`} width={1200} height={675} className="relative z-10 mb-6 aspect-video w-full rounded-lg border border-white/10 object-cover object-top" />
+      ) : (
+        <div className="project-signal absolute inset-0 -z-0" aria-hidden="true" />
+      )}
       <div className="relative z-10 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
         <div>
           <div className="mb-3 flex flex-wrap gap-2">
             {p.tags.map((t) => (
               <span
                 key={t}
-                className={`rounded-full border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider ${tagColor[t]}`}
+                className={`rounded-full border px-2 py-0.5 font-mono text-xs ${tagColor[t]}`}
               >
                 {t}
               </span>
@@ -125,13 +123,13 @@ function FeaturedCard({ p, index }: { p: Project; index: number }) {
           </p>
         </div>
         <div className="md:border-l md:border-white/10 md:pl-6">
-          <p className="font-mono text-xs uppercase tracking-widest text-cyan/70">
+          <p className="font-mono text-xs text-cyan/70">
             shipped impact
           </p>
           <p className="mt-2 text-sm leading-relaxed text-white">{p.impact}</p>
           <div className="mt-4 flex flex-wrap gap-1.5">
             {p.stack.slice(0, 5).map((s) => (
-              <span key={s} className="rounded border border-white/10 bg-white/[0.04] px-2 py-0.5 font-mono text-[11px] text-gray-300">
+              <span key={s} className="rounded border border-white/10 bg-white/[0.04] px-2 py-0.5 font-mono text-xs text-gray-300">
                 {s}
               </span>
             ))}
@@ -164,7 +162,7 @@ export default function Projects() {
         : projects.filter((p) => p.tags.includes(filter as Project["tags"][number])),
     [filter]
   );
-  const featured = filtered.filter((p) => p.featured).slice(0, 3);
+  const featured = filtered.filter((p) => p.featured).slice(0, 5);
   const supporting = filtered.filter((p) => !featured.includes(p));
 
   return (
@@ -180,6 +178,7 @@ export default function Projects() {
           <button
             key={t}
             onClick={() => setFilter(t)}
+            aria-pressed={filter === t}
             className={`rounded-lg border px-4 py-1.5 font-mono text-xs transition-all ${
               filter === t
                 ? "border-purple bg-purple/20 text-white glow-border"
@@ -200,7 +199,7 @@ export default function Projects() {
       </motion.div>
       {supporting.length > 0 && (
         <div className="mt-12">
-          <p className="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          <p className="mb-5 font-mono text-xs text-muted">
             more_work // {supporting.length} systems
           </p>
           <motion.div layout className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

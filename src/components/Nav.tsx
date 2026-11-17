@@ -6,6 +6,8 @@ import { profile } from "@/data/portfolio";
 const links = [
   { href: "#about", label: "about" },
   { href: "#projects", label: "projects" },
+  { href: "#nexora-case-study", label: "nexora" },
+  { href: "#services", label: "services" },
   { href: "#skills", label: "skills" },
   { href: "#log", label: "build_log" },
   { href: "#contact", label: "contact" },
@@ -56,11 +58,12 @@ export default function Nav({ onTerminal }: { onTerminal: () => void }) {
           <span className="caret text-purple">_</span>
         </a>
 
-        <ul className="hidden items-center gap-7 font-mono text-sm text-muted md:flex">
+        <ul className="hidden items-center gap-6 font-mono text-sm text-muted lg:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
+                aria-current={active === l.href ? "true" : undefined}
                 className={`transition-colors hover:text-cyan ${
                   active === l.href ? "text-cyan" : ""
                 }`}
@@ -73,6 +76,9 @@ export default function Nav({ onTerminal }: { onTerminal: () => void }) {
         </ul>
 
         <div className="flex items-center gap-3">
+          <a href={profile.resumeUrl} download className="hidden rounded-lg border border-purple/40 px-3 py-1.5 font-mono text-xs text-purple-bright transition-colors hover:border-cyan hover:text-cyan sm:block">
+            resume
+          </a>
           <button
             onClick={onTerminal}
             className="pill px-3 py-1.5 font-mono text-xs text-purple-bright transition-colors hover:bg-purple/20"
@@ -82,8 +88,10 @@ export default function Nav({ onTerminal }: { onTerminal: () => void }) {
           </button>
           <button
             onClick={() => setOpen((v) => !v)}
-            className="font-mono text-xl text-purple md:hidden"
+            className="font-mono text-xl text-purple lg:hidden"
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
             {open ? "✕" : "≡"}
           </button>
@@ -91,7 +99,7 @@ export default function Nav({ onTerminal }: { onTerminal: () => void }) {
       </nav>
 
       {open && (
-        <ul className="flex flex-col gap-1 border-t border-purple/15 bg-base/95 px-5 py-3 font-mono text-sm md:hidden">
+        <ul id="mobile-menu" className="flex flex-col gap-1 border-t border-purple/15 bg-base/95 px-5 py-3 font-mono text-sm lg:hidden">
           {links.map((l) => (
             <li key={l.href}>
               <a

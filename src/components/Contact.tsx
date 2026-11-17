@@ -8,7 +8,7 @@ const channels = [
   { label: "email", value: profile.email, href: `mailto:${profile.email}` },
   { label: "github", value: `@${profile.githubUser}`, href: profile.socials.github },
   { label: "linkedin", value: "in/fawazoyebode", href: profile.socials.linkedin },
-  { label: "x", value: `@${profile.githubUser}`, href: profile.socials.twitter },
+  { label: "x", value: `@${profile.twitterHandle}`, href: profile.socials.twitter },
 ];
 
 export default function Contact() {
@@ -30,25 +30,20 @@ export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:py-28">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
         className="glass relative overflow-hidden p-8 sm:p-12"
       >
         <div className="grid-bg pointer-events-none absolute inset-0 -z-0 opacity-50" />
         <div className="relative">
           <div className="flex items-center gap-4">
-            <span className="font-mono text-sm text-cyan">07</span>
             <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              let&apos;s build something
+              let&apos;s work together
             </h2>
           </div>
 
           <p className="mt-4 max-w-xl text-muted">
-            Have a backend, Web3, or automation problem? I&apos;m open to{" "}
-            <span className="text-purple-bright">paid software projects</span>,
-            product collaborations, and freelance builds. The fastest way to reach me is email.
+            I&apos;m open to{" "}
+            <span className="text-purple-bright">full-time backend and Web3 developer roles</span>,
+            and take on select freelance projects. The fastest way to reach me is email.
           </p>
           <p className="mt-3 font-mono text-xs text-cyan/70">
             usually replies within 1–2 business days
@@ -66,7 +61,7 @@ export default function Contact() {
               <span className="text-muted">:~$</span> contact --reach-out
             </p>
             <p className="mt-1 text-purple-bright">
-              ↳ {profile.location} · {profile.phone}
+              ↳ {profile.location}
             </p>
           </div>
 
@@ -79,7 +74,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="glass-hover flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 transition-colors"
               >
-                <span className="font-mono text-xs uppercase tracking-wider text-cyan">
+                <span className="font-mono text-xs text-cyan">
                   {c.label}
                 </span>
                 <span className="font-mono text-sm text-gray-300">{c.value} →</span>
@@ -99,14 +94,14 @@ export default function Contact() {
           </button>
 
           <div className="mt-10">
-            <h3 className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
+            <h3 className="mb-3 font-mono text-xs text-muted">
               certifications & training
             </h3>
             <div className="flex flex-wrap gap-2">
               {certifications.map((c) => (
                 <span
                   key={c}
-                  className="rounded-md border border-purple/20 bg-purple/[0.06] px-3 py-1.5 font-mono text-[11px] text-gray-300"
+                  className="rounded-md border border-purple/20 bg-purple/[0.06] px-3 py-1.5 font-mono text-xs text-gray-300"
                 >
                   {c}
                 </span>
