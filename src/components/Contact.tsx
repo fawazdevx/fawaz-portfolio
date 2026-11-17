@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { profile, certifications } from "@/data/portfolio";
 
 const channels = [
@@ -11,6 +12,21 @@ const channels = [
 ];
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setCopyError(false);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+      setCopyError(true);
+    }
+  }
+
   return (
     <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:py-28">
       <motion.div
@@ -30,8 +46,12 @@ export default function Contact() {
           </div>
 
           <p className="mt-4 max-w-xl text-muted">
-            Open to <span className="text-purple-bright">paid software projects</span>,
-            Web3 collaborations, and freelance builds. The fastest way to reach me is email.
+            Have a backend, Web3, or automation problem? I&apos;m open to{" "}
+            <span className="text-purple-bright">paid software projects</span>,
+            product collaborations, and freelance builds. The fastest way to reach me is email.
+          </p>
+          <p className="mt-3 font-mono text-xs text-cyan/70">
+            usually replies within 1–2 business days
           </p>
 
           {/* terminal-style block */}
@@ -66,6 +86,17 @@ export default function Contact() {
               </a>
             ))}
           </div>
+          <button
+            type="button"
+            onClick={copyEmail}
+            className="mt-3 rounded-lg border border-cyan/25 bg-cyan/[0.04] px-4 py-3 font-mono text-xs text-cyan transition-colors hover:border-cyan/60 hover:bg-cyan/10"
+          >
+            {copied
+              ? "email_copied ✓"
+              : copyError
+                ? "copy_failed — use the email link above"
+                : "copy_email_address"}
+          </button>
 
           <div className="mt-10">
             <h3 className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">

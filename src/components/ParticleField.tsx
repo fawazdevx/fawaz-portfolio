@@ -29,7 +29,7 @@ export default function ParticleField() {
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.min(90, Math.floor((w * h) / 16000));
+      const count = Math.min(60, Math.floor((w * h) / 22000));
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
@@ -58,7 +58,7 @@ export default function ParticleField() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(167, 139, 250, 0.8)";
+        ctx.fillStyle = "rgba(167, 139, 250, 0.55)";
         ctx.fill();
       }
 
@@ -67,8 +67,8 @@ export default function ParticleField() {
           const a = particles[i];
           const b = particles[j];
           const dist = Math.hypot(a.x - b.x, a.y - b.y);
-          if (dist < 130) {
-            const op = (1 - dist / 130) * 0.5;
+          if (dist < 115) {
+            const op = (1 - dist / 115) * 0.32;
             ctx.strokeStyle = `rgba(139, 92, 246, ${op})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();

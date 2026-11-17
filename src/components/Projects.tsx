@@ -92,6 +92,68 @@ function Card({ p }: { p: Project }) {
   );
 }
 
+function FeaturedCard({ p, index }: { p: Project; index: number }) {
+  return (
+    <motion.article
+      layout
+      initial={{ opacity: 0, y: 18 }}
+      animate={{ opacity: 1, y: 0 }}
+      className={`glass glass-hover group relative overflow-hidden p-6 sm:p-8 ${
+        index === 0 ? "md:col-span-2" : ""
+      }`}
+    >
+      <div className="project-signal absolute inset-0 -z-0" aria-hidden="true">
+        <span>{String(index + 1).padStart(2, "0")}</span>
+      </div>
+      <div className="relative z-10 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
+        <div>
+          <div className="mb-3 flex flex-wrap gap-2">
+            {p.tags.map((t) => (
+              <span
+                key={t}
+                className={`rounded-full border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider ${tagColor[t]}`}
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+          <h3 className="font-mono text-2xl font-bold text-white transition-colors group-hover:text-purple-bright sm:text-3xl">
+            {p.name}
+          </h3>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-300 sm:text-base">
+            {p.blurb}
+          </p>
+        </div>
+        <div className="md:border-l md:border-white/10 md:pl-6">
+          <p className="font-mono text-xs uppercase tracking-widest text-cyan/70">
+            shipped impact
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-white">{p.impact}</p>
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {p.stack.slice(0, 5).map((s) => (
+              <span key={s} className="rounded border border-white/10 bg-white/[0.04] px-2 py-0.5 font-mono text-[11px] text-gray-300">
+                {s}
+              </span>
+            ))}
+          </div>
+          <div className="mt-5 flex gap-4 border-t border-white/10 pt-4">
+            {p.github && (
+              <a href={p.github} target="_blank" rel="noopener noreferrer" className="font-mono text-xs text-muted hover:text-white">
+                source →
+              </a>
+            )}
+            {p.live && (
+              <a href={p.live} target="_blank" rel="noopener noreferrer" className="font-mono text-xs text-purple-bright hover:text-cyan">
+                live demo →
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
 export default function Projects() {
   const [filter, setFilter] = useState<string>(ALL);
 
@@ -102,9 +164,17 @@ export default function Projects() {
         : projects.filter((p) => p.tags.includes(filter as Project["tags"][number])),
     [filter]
   );
+  const featured = filtered.filter((p) => p.featured).slice(0, 3);
+  const supporting = filtered.filter((p) => !featured.includes(p));
 
   return (
     <Section id="projects" index="02" title="projects.lab">
+      <div className="mb-8 max-w-2xl">
+        <p className="text-lg leading-relaxed text-gray-300">
+          A selection of production-minded systems, products, and experiments.
+          Start with the featured builds, then browse the full archive by capability.
+        </p>
+      </div>
       <div className="mb-8 flex flex-wrap gap-2">
         {tags.map((t) => (
           <button
@@ -121,13 +191,27 @@ export default function Projects() {
         ))}
       </div>
 
-      <motion.div layout className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <motion.div layout className="grid gap-5 md:grid-cols-2">
         <AnimatePresence mode="popLayout">
-          {filtered.map((p) => (
-            <Card key={p.name} p={p} />
+          {featured.map((p, index) => (
+            <FeaturedCard key={p.name} p={p} index={index} />
           ))}
         </AnimatePresence>
       </motion.div>
+      {supporting.length > 0 && (
+        <div className="mt-12">
+          <p className="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-muted">
+            more_work // {supporting.length} systems
+          </p>
+          <motion.div layout className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <AnimatePresence mode="popLayout">
+              {supporting.map((p) => (
+                <Card key={p.name} p={p} />
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      )}
     </Section>
   );
 }

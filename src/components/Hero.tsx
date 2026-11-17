@@ -75,11 +75,21 @@ export default function Hero() {
         <span className="gradient-text glow-purple">Oyebode</span>
       </motion.h1>
 
-      <motion.div
+      <motion.p
         variants={fade}
         initial="hidden"
         animate="show"
         custom={2}
+        className="mt-5 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-gray-200 sm:text-4xl"
+      >
+        Secure systems for ambitious products.
+      </motion.p>
+
+      <motion.div
+        variants={fade}
+        initial="hidden"
+        animate="show"
+        custom={3}
         className="mt-6 h-8 font-mono text-lg text-purple-bright sm:text-2xl"
       >
         <span className="text-muted">&gt; </span>
@@ -91,7 +101,7 @@ export default function Hero() {
         variants={fade}
         initial="hidden"
         animate="show"
-        custom={3}
+        custom={4}
         className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
       >
         {profile.tagline}
@@ -101,31 +111,33 @@ export default function Hero() {
         variants={fade}
         initial="hidden"
         animate="show"
-        custom={4}
+        custom={5}
         className="mt-10 flex flex-wrap items-center justify-center gap-4"
       >
         <a
           href="#projects"
           className="glow-border rounded-lg bg-purple px-6 py-3 font-mono text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
         >
-          ▸ view_projects
+          ▸ view_selected_work
         </a>
         <a
-          href={profile.resumeUrl}
-          download
+          href="#contact"
           className="rounded-lg border border-purple/40 px-6 py-3 font-mono text-sm font-semibold text-purple-bright transition-colors hover:border-cyan hover:text-cyan"
         >
-          ↓ download_resume
-        </a>
-        <a
-          href={profile.socials.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-lg border border-white/10 px-6 py-3 font-mono text-sm text-muted transition-colors hover:text-white"
-        >
-          ⌥ github
+          start_a_conversation
         </a>
       </motion.div>
+      <motion.a
+        href={profile.resumeUrl}
+        download
+        variants={fade}
+        initial="hidden"
+        animate="show"
+        custom={6}
+        className="mt-4 font-mono text-xs text-muted transition-colors hover:text-cyan"
+      >
+        ↓ download_resume
+      </motion.a>
 
       <motion.a
         href="#about"

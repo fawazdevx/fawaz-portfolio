@@ -14,12 +14,29 @@ const links = [
 export default function Nav({ onTerminal }: { onTerminal: () => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(`#${visible.target.id}`);
+      },
+      { rootMargin: "-25% 0px -60% 0px", threshold: [0.1, 0.3, 0.6] },
+    );
+    links.forEach((link) => {
+      const section = document.querySelector(link.href);
+      if (section) observer.observe(section);
+    });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -44,7 +61,9 @@ export default function Nav({ onTerminal }: { onTerminal: () => void }) {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="transition-colors hover:text-cyan"
+                className={`transition-colors hover:text-cyan ${
+                  active === l.href ? "text-cyan" : ""
+                }`}
               >
                 <span className="text-purple/70">#</span>
                 {l.label}
@@ -78,7 +97,9 @@ export default function Nav({ onTerminal }: { onTerminal: () => void }) {
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-muted hover:text-cyan"
+                className={`block rounded px-2 py-2 text-muted hover:text-cyan ${
+                  active === l.href ? "bg-purple/10 text-cyan" : ""
+                }`}
               >
                 <span className="text-purple/70">#</span>
                 {l.label}
